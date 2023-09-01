@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>チカソウコ・ダ・シューツ</title>
+  <link rel="stylesheet" href="index.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500&display=swap" rel="stylesheet">
+ </head>
+ <body>
+    <div class="code">
+        <dil class="center">
+            <form name="frmAngoukaJump" action="javascript:DecodeJump();" autocomplete="off">
+                <input name="txtPasswordForDecode" type="text" size="20" id="inp_val" placeholder="ひらがなで入力">
+                <button type="submit">送信</button>
+            </form>   
+        </dil>
+        <script>// <![CDATA[
+            function DecodeJump(){
+              var cURL = new Array();
+              //ここに暗号化URLをコピー▽▽▽▽▽▽▽▽▽
+              cURL[0] = "12514,12519,12320,12538,12512,12398,12453,12476,12323,12541,12516,12410,12531,12530,12348,12517,12540,12410,12521,12540,12410,12512,12515,12411";
+              //ここに暗号化URLをコピー△△△△△△△△△
+              var KeyWord;
+              KeyWord = document.frmAngoukaJump.txtPasswordForDecode.value;
+            
+              re = new RegExp("https://www.yahoo.co.jp/", "i");
+              var str = new Array();
+              for ( var k = 0; k <= cURL.length - 1; k++ ){
+                str[k] = De(cURL[k],KeyWord);
+              }
+            
+                if (str[0].match(re)) {
+                  document.location.href = str[0] ;
+                }else{
+                  alert("パスワードの照合に失敗しました。");
+                }
+            }
+            
+            function MakeKey(Key,Nmb){
+              var j;
+              KeyBuff = new Array(Nmb);
+              for(j=0;j < Nmb;j++){
+                KeyBuff[j] = Key.substr(j % Key.length,1).charCodeAt(0);
+              }
+            }
+            
+            function De(str,mKey){
+              var StrBuff = str.split(",");
+              var LBuff = "";
+              UB = StrBuff.length; MakeKey(mKey,UB);
+              for(i = 0; i < UB;i++ ){
+                StrBuff[i] = unescape(StrBuff[i]) ^ KeyBuff[i];
+                LBuff = LBuff + String.fromCharCode(StrBuff[i]); 
+              }
+              return LBuff;
+            }
+            // ]]></script>
+       </div>
+       <div class="logo"></div>
+ </body>
+</html>
