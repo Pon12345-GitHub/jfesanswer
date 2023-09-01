@@ -9,7 +9,7 @@ body {
   position: fixed;
   padding:  500px;
   background-size: 800px;
-  margin-left: 400px;
+  margin-left: 350px;
 }
 
 .code {
@@ -19,7 +19,7 @@ body {
     max-width: 500px;
     z-index: 10000;
     margin: 45rem auto;
-    margin-left: 35rem;
+    margin-left: 30rem;
   }
   .code form {
     display: flex;
