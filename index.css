@@ -1,0 +1,70 @@
+body {
+    background-color: #ffffff;
+}
+
+.logo {
+  background-image: url(logo.png);
+  background-repeat: no-repeat;
+  text-align:  center;
+  position: fixed;
+  padding:  500px;
+  background-size: 800px;
+  margin-left: 260px;
+}
+
+.code {
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    max-width: 500px;
+    z-index: 10000;
+    margin: 45rem auto;
+    margin-left: 26.5rem;
+  }
+  .code form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .code input {
+    position: relative;
+    display: block;
+    outline: none;
+    border-radius: 0.5rem;
+    border: solid 0.1rem #999999;
+    font-family: 'Shippori Mincho', serif;
+  }
+  .code input[type="text"] {
+    padding: 0 0 0 0.5rem;
+    height: 3.6rem;
+    line-height: 3.6rem;
+    font-size: 1.8rem;
+    background-color: #ffffff;
+  }
+  .code input[type="text"]:disabled {
+    background-color: rgba(255,255,255,0.9);
+  }
+  .code button {
+    color: #000000;
+    background-color:#DBDA89;
+    font-size: 1.6rem;
+    font-weight: bold;
+    line-height: 1.5;
+    position: relative;
+    display: inline-block;
+    padding: 0.5rem 2.0rem;
+    margin-left: 0.5rem;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+    text-align: center;
+    vertical-align: middle;
+    text-decoration: none;
+    letter-spacing: 0.1em;
+    border-radius: 0.5rem;
+    font-family: 'Shippori Mincho', serif;
+  }
